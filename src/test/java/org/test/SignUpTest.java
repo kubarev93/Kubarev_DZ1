@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class SignUpTest {
-
+    //first test
 
     @Test
     public void zipCodeTest() {
@@ -20,6 +20,7 @@ public class SignUpTest {
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("input[value='Continue']")).click();
         Assert.assertTrue(driver.findElement(By.cssSelector("input[value='Register']")).isDisplayed());
+
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.xpath("//a[normalize-space()='Sign up']")).click();
@@ -45,7 +46,7 @@ public class SignUpTest {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.xpath("//a[normalize-space()='Sign up']")).click();
-        driver.findElement(By.name("zip_code")).sendKeys("dfgfdgdfg");
+        driver.findElement(By.name("zip_code")).sendKeys("dfgfdg1231dfg");
         driver.findElement(By.cssSelector("input[value='Continue']")).click();
         Assert.assertTrue(driver.findElement(By.cssSelector(".error_message")).isDisplayed());
     }
@@ -58,11 +59,11 @@ public class SignUpTest {
         driver.findElement(By.xpath("//a[normalize-space()='Sign up']")).click();
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("input[value='Continue']")).click();
-        driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("Suvorov");
-        driver.findElement(By.xpath("//input[@name='last_name']")).sendKeys("Eugene");
-        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("Suvorov@gmai.com");
-        driver.findElement(By.xpath("//input[@name='password1']")).sendKeys("qwerty1");
-        driver.findElement(By.xpath("//input[@name='password2']")).sendKeys("qwerty1");
+        driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("Kubarev");
+        driver.findElement(By.xpath("//input[@name='last_name']")).sendKeys("Dmitry");
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("Kuabrev@gmai.com");
+        driver.findElement(By.xpath("//input[@name='password1']")).sendKeys("qwerty123");
+        driver.findElement(By.xpath("//input[@name='password2']")).sendKeys("qwerty123");
         driver.findElement(By.xpath("//input[@value='Register']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//span[@class='confirmation_message']")).isDisplayed());
 
